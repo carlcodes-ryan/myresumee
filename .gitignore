@@ -1,0 +1,17 @@
+# Vercel & Environment
+.vercel
+*.log
+.env
+.env.local
+
+# Operating System Metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Loose raw camera dump files
+20260316_*.jpg
+WhatsApp Image*.jpg
+template.jpg
+* (2).pdf

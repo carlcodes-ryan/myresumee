@@ -1,0 +1,11 @@
+# Vercel
+.vercel
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs & Environment
+*.log
+.env
+.env.local
