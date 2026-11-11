@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404: System Path Not Found | MarkRyan Kimathi</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #6b6b6b;
+      --text-h: #0d0d0d;
+      --cobalt: #315cff;
+      --border: #e0e0e0;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #0c0c0c;
+      --surface: #141414;
+      --text: #d6d6d6;
+      --text-muted: #8f8f8f;
+      --text-h: #f5f5f5;
+      --cobalt: #3b66ff;
+      --border: #242424;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .error-card {
+      max-width: 540px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow: 0 12px 40px -16px rgba(0,0,0,0.1);
+    }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      color: var(--text-h);
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+    p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--text-h);
+      color: var(--bg);
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--cobalt);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <main class="error-card">
+    <span class="badge">HTTP 404 // ROUTE_NOT_FOUND</span>
+    <h1>404</h1>
+    <p>The system route or architecture artifact you requested does not exist or has been relocated to another endpoint.</p>
+    <a href="/" class="btn">Return to Primary System →</a>
+  </main>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</body>
+</html>

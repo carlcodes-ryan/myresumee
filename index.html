@@ -6,12 +6,96 @@
   <title>MarkRyan Kimathi | Systems Architect & Creative Developer</title>
   <meta name="description" content="Nairobi web developer and systems architect building custom web applications, business-critical POS platforms, and software businesses run on every day.">
   <meta name="author" content="MarkRyan Kimathi">
+  <link rel="canonical" href="https://markryan.dev/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="markryan-portrait.jpg">
+  
+  <!-- Open Graph & Social Cards -->
   <meta property="og:title" content="MarkRyan Kimathi | Systems Architect & Creative Developer">
-  <meta property="og:description" content="Nairobi web developer and systems architect building custom web applications, business-critical POS platforms, and software businesses run on every day.">
-  <meta property="og:image" content="markryan-portrait.jpg">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="Behind every screen is a system. Behind every system is a decision someone had to get right. Nairobi web developer and systems architect building software businesses run on.">
+  <meta property="og:url" content="https://markryan.dev/">
+  <meta property="og:site_name" content="MarkRyan Kimathi">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:image" content="https://markryan.dev/markryan-portrait.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait of MarkRyan Kimathi">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MarkRyan Kimathi | Systems Architect & Creative Developer">
+  <meta name="twitter:description" content="Nairobi web developer and systems architect building custom web applications, business-critical POS platforms, and software businesses run on every day.">
+  <meta name="twitter:image" content="https://markryan.dev/markryan-portrait.jpg">
+
+  <!-- Schema.org Semantic Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://markryan.dev/#site",
+        "url": "https://markryan.dev/",
+        "name": "MarkRyan Kimathi",
+        "description": "Nairobi web developer and systems architect building software businesses run on every day.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://markryan.dev/#person",
+        "name": "MarkRyan Kimathi",
+        "jobTitle": "Systems Architect & Creative Developer",
+        "url": "https://markryan.dev/",
+        "image": "https://markryan.dev/markryan-portrait.jpg",
+        "email": "mailto:kimmarkryan5@gmail.com",
+        "telephone": "+254798707487",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "sameAs": [
+          "https://github.com/macrya",
+          "https://github.com/carlcodes-ryan"
+        ],
+        "knowsAbout": [
+          "Systems Architecture",
+          "Full-Stack Web Development",
+          "Point of Sale Systems",
+          "PostgreSQL",
+          "TypeScript",
+          "Python",
+          "M-Pesa API Integration",
+          "Cloudflare Infrastructure"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://markryan.dev/#business",
+        "name": "MarkRyan Kimathi — Systems Architecture & Web Development",
+        "url": "https://markryan.dev/",
+        "telephone": "+254798707487",
+        "email": "kimmarkryan5@gmail.com",
+        "founder": { "@id": "https://markryan.dev/#person" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "areaServed": ["Nairobi", "Kenya", "East Africa", "Global"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Engineering & Architecture Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Systems Architecture & Database Schema Design" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom High-Performance Web Applications" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Point of Sale & Inventory Software Infrastructure" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Regional Integrations (M-Pesa Daraja, SMS, Receipts)" } }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
   
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1063,6 +1147,87 @@
       color: var(--electric-cobalt);
     }
 
+    
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--electric-cobalt);
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      z-index: 9999;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--electric-cobalt);
+      outline-offset: 3px;
+    }
+
+    /* Cookie & Storage Banner */
+    .storage-banner {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      max-width: 580px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      animation: slideUpBanner 0.3s ease;
+    }
+    @keyframes slideUpBanner {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .storage-banner__actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .storage-banner__btn {
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .storage-banner__btn--accept {
+      background: var(--text-h);
+      color: var(--bg-page);
+      border: 1px solid var(--text-h);
+    }
+    .storage-banner__btn--accept:hover {
+      background: var(--electric-cobalt);
+      border-color: var(--electric-cobalt);
+      color: #ffffff;
+    }
+    .storage-banner__link {
+      color: var(--electric-cobalt);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
     /* ==========================================================================
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
@@ -1138,6 +1303,7 @@
   </style>
 </head>
 <body>
+  <a href="#home" class="skip-link">Skip to main content</a>
 
   <!-- Top Sticky Navigation (frankadwar.dev layout) -->
   <header class="top-nav">
@@ -1521,10 +1687,13 @@
             <li><span class="site-footer__link">East Africa Packaging Hub POS</span></li>
           </ul>
           
-          <details class="site-footer__legal-details">
-            <summary class="site-footer__legal-summary">Legal & Terms</summary>
+          <details class="site-footer__legal-details" id="legal-privacy">
+            <summary class="site-footer__legal-summary">Compliance, Privacy &amp; Legal Terms</summary>
             <div class="site-footer__legal-content">
-              All proprietary systems, architectures, and client codebases are developed under confidential agreement. © 2026 Ryan's Creative · Nairobi, Kenya.
+              <p style="margin-bottom: 0.6rem;"><strong>Data Controller:</strong> MarkRyan Kimathi (Ryan's Creative), Nairobi, Kenya. Contact: <a href="mailto:kimmarkryan5@gmail.com" style="color:var(--electric-cobalt);">kimmarkryan5@gmail.com</a>.</p>
+              <p style="margin-bottom: 0.6rem;"><strong>Privacy &amp; Data Handling:</strong> Built in accordance with the Kenya Data Protection Act (2019), GDPR (Regulation (EU) 2016/679), and CCPA. We collect zero tracking cookies, execute no invasive ad pixels, and retain only bilateral inquiry communications. You have statutory rights to data access, rectification, and erasure ("Right to Be Forgotten") under Section 40 KDPA &amp; Article 17 GDPR upon email request.</p>
+              <p style="margin-bottom: 0.6rem;"><strong>Terms &amp; Intellectual Property:</strong> All client deliverables, architecture designs, and software systems are delivered under explicit bilateral agreement. Governing jurisdiction: Republic of Kenya.</p>
+              <p><strong>Storage Notice:</strong> This site uses browser <code>localStorage</code> strictly for user theme preferences (light/dark mode). Zero third-party profiling data is stored.</p>
             </div>
           </details>
         </div>
@@ -1537,6 +1706,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cookie & Storage Consent Banner -->
+  <div id="storageBanner" class="storage-banner" style="display: none;" role="dialog" aria-label="Privacy and Storage Preferences">
+    <p>
+      <strong>Privacy &amp; Local Storage Notice:</strong> This site uses functional browser storage strictly for light/dark theme persistence. We use zero third-party tracking cookies or advertising pixels.
+    </p>
+    <div class="storage-banner__actions">
+      <button id="acceptStorage" class="storage-banner__btn storage-banner__btn--accept">Acknowledge</button>
+      <a href="#legal-privacy" class="storage-banner__link" onclick="document.getElementById('legal-privacy').open = true;">Read Full Privacy Policy</a>
+    </div>
+  </div>
+
 
   <!-- Theme Toggle & Smooth Interaction Script -->
   <script>
@@ -1580,6 +1761,19 @@
           }
         });
       }, { passive: true });
+    
+      // Privacy & Storage banner check
+      if (!localStorage.getItem('storage_consent_acknowledged')) {
+        const banner = document.getElementById('storageBanner');
+        if (banner) {
+          banner.style.display = 'flex';
+          document.getElementById('acceptStorage').addEventListener('click', () => {
+            localStorage.setItem('storage_consent_acknowledged', 'true');
+            banner.style.display = 'none';
+          });
+        }
+      }
+
     })();
   </script>
 </body>
